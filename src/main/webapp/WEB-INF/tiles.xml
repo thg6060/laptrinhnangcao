@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="master" template="/WEB-INF/views/layout/master-layout.jsp">
+		<put-attribute name="sitebar" value="/WEB-INF/views/layout/sitebar.jsp"></put-attribute>
+		<put-attribute name="top-nav" value="/WEB-INF/views/layout/top-nav.jsp"></put-attribute>
+		<put-attribute name="body" value="/WEB-INF/views/layout/body.jsp"></put-attribute>
+		<put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp"></put-attribute>
+	</definition>
+	<definition name="index" extends="master">
+		<put-attribute name="body" value="/WEB-INF/views/index.jsp"></put-attribute>
+	</definition>
+	
+	
+	<definition name="category-action" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/category/category-action.jsp"></put-attribute>
+	</definition>
+	<definition name="category-list" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/category/category-list.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="product-info-action" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/productInfo/product-info-action.jsp"></put-attribute>
+	</definition>
+	<definition name="product-info-list" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/productInfo/product-info-list.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="product-stock-list" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/productStock/product-stock-list.jsp"></put-attribute>
+	</definition>
+	
+	<definition name="import-product" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/productStock/import-product.jsp"></put-attribute>
+	</definition>
+	<definition name="export-product" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/productStock/export-product.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>

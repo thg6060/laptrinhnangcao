@@ -1,0 +1,58 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<div class="right_col" role="main">
+	<div class="">
+		<div class="page-title">
+			<div class="title_left">
+				<h2>${titlePage}</h2>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<div class="x_panel">
+
+					<div class="x_content">
+						<br />
+						<form:form modelAttribute="modelForm" cssClass="form-horizontal form-label-left" servletRelativeAction="/product-stock/export-stock" method="POST">
+							<form:hidden path="createDate" />
+							<form:hidden path="id" />
+
+							<div class="item form-group">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12 label-align" for="name">Quantity <span class="required">*</span>
+								</label>
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<form:input path="qty" cssClass="form-control col-md-7 col-xs-12" disabled="${viewOnly}" />
+								</div>
+							</div>
+							<div class="item form-group">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12 label-align" for="productId">Product <span class="required">*</span>
+								</label>
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<c:choose>
+										<c:when test="${!viewOnly}">
+										
+											<form:select path="productId" cssClass="form-control col-md-7 col-xs-12">
+												<form:options items="${mapProduct}" />
+											</form:select>
+										</c:when>
+									</c:choose>
+								</div>
+							</div>
+							<div class="ln_solid"></div>
+							<div class="item form-group">
+								<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3 label-align">
+									<c:if test="${!viewOnly }">
+										<button type="submit" class="btn btn-success">Submit</button>
+									</c:if>
+								</div>
+							</div>
+
+						</form:form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
